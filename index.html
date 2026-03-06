@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate App Launcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* --- General Body --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px 0;
+    text-shadow: 3px 3px 10px #000;
+}
+h2 {
+    font-size: 2rem;
+    margin: 40px 0 10px 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 4px #000;
+}
+p.section-desc {
+    margin: 0 0 20px 20px;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* --- Grid for Apps --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+    padding: 0 20px 50px 20px;
+}
+
+/* --- App Card --- */
+.app-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+.app-card:hover {
+    transform: translateY(-15px) scale(1.1) rotate(-1deg);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+.app-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+.app-card:hover img { transform: rotate(15deg) scale(1.2); }
+.app-card p { font-weight: bold; font-size: 1rem; margin: 0; z-index: 2; position: relative; }
+.app-card span { font-size: 0.8rem; color: #ddd; display: block; margin-top: 5px; z-index: 2; position: relative; }
+
+/* --- Learning Decorations --- */
+.learning-decor {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    opacity: 0.3;
+    animation: float 6s infinite linear;
+}
+@keyframes float {
+    0% {transform: translateY(0) rotate(0deg);}
+    50% {transform: translateY(-15px) rotate(180deg);}
+    100% {transform: translateY(0) rotate(360deg);}
+}
+
+/* --- Section Fade-in Animation --- */
+section { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+section.visible { opacity: 1; transform: translateY(0); }
+
+@media(max-width:500px){ 
+    h1{font-size:2rem;} 
+    h2{font-size:1.5rem;} 
+    .app-card img{width:40px;height:40px;} 
+}
+</style>
+</head>
+<body>
+
+<h1>🚀 Ultimate App Launcher 🚀</h1>
+
+<!-- --- Sections --- -->
+
+<section id="entertainment">
+<h2>Entertainment</h2>
+<p class="section-desc">Videos, music, and movies all in one place!</p>
+<div class="grid-container">
+  <div class="app-card" onclick="window.open('https://www.youtube.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube"><p>YouTube</p><span>Videos</span></div>
+  <div class="app-card" onclick="window.open('https://www.netflix.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix"><p>Netflix</p><span>Movies</span></div>
+  <div class="app-card" onclick="window.open('https://www.spotify.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify"><p>Spotify</p><span>Music</span></div>
+  <div class="app-card" onclick="window.open('https://www.tiktok.com/')"><img src="https://upload.wikimedia.org/wikipedia/en/0/0a/TikTok_logo.svg" alt="TikTok"><p>TikTok</p><span>Short Videos</span></div>
+  <div class="app-card" onclick="window.open('https://www.hulu.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Hulu_Logo.svg" alt="Hulu"><p>Hulu</p><span>Streaming</span></div>
+  <div class="app-card" onclick="window.open('https://www.primevideo.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Amazon_Prime_Video_logo.svg" alt="Prime Video"><p>Prime Video</p><span>Movies & Shows</span></div>
+</div>
+</section>
+
+<section id="social">
+<h2>Social</h2>
+<p class="section-desc">Connect with friends and communities!</p>
+<div class="grid-container">
+  <div class="app-card" onclick="window.open('https://www.facebook.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook"><p>Facebook</p><span>Social</span></div>
+  <div class="app-card" onclick="window.open('https://twitter.com/')"><img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Twitter_bird_logo_2012.svg" alt="Twitter"><p>Twitter</p><span>Microblog</span></div>
+  <div class="app-card" onclick="window.open('https://www.instagram.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"><p>Instagram</p><span>Photo Sharing</span></div>
+  <div class="app-card" onclick="window.open('https://www.snapchat.com/')"><img src="https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg" alt="Snapchat"><p>Snapchat</p><span>Chat</span></div>
+  <div class="app-card" onclick="window.open('https://discord.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord"><p>Discord</p><span>Communities</span></div>
+  <div class="app-card" onclick="window.open('https://www.reddit.com/')"><img src="https://upload.wikimedia.org/wikipedia/en/5/58/Reddit_logo_new.svg" alt="Reddit"><p>Reddit</p><span>Forums</span></div>
+</div>
+</section>
+
+<section id="productivity">
+<h2>Productivity</h2>
+<p class="section-desc">Tools for work, projects, and organization!</p>
+<div class="grid-container">
+  <div class="app-card" onclick="window.open('https://www.google.com/drive/')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Google_Drive_logo.png" alt="Drive"><p>Google Drive</p><span>Cloud Storage</span></div>
+  <div class="app-card" onclick="window.open('https://www.google.com/calendar')"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_(2020).svg" alt="Calendar"><p>Google Calendar</p><span>Planner</span></div>
+  <div class="app-card" onclick="window.open('https://www.slack.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" alt="Slack"><p>Slack</p><span>Team Chat</span></div>
+  <div class="app-card" onclick="window.open('https://www.microsoft.com/en-us/microsoft-365')"><img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Microsoft_Office_Logo_%282019%E2%80%93present%29.svg" alt="Office"><p>Office 365</p><span>Docs & Sheets</span></div>
+  <div class="app-card" onclick="window.open('https://www.evernote.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Evernote_logo.svg" alt="Evernote"><p>Evernote</p><span>Notes</span></div>
+  <div class="app-card" onclick="window.open('https://trello.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Trello_logo.svg" alt="Trello"><p>Trello</p><span>Projects</span></div>
+</div>
+</section>
+
+<section id="learning">
+<h2>Learning</h2>
+<p class="section-desc">Boost your skills! Pencils & books floating around 😄</p>
+<div class="grid-container">
+  <div class="app-card" onclick="window.open('https://www.kitexacademy.com/')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Placeholder_logo.svg" alt="Kitex Academy">
+    <p>Kitex Academy</p><span>Courses</span>
+    <img class="learning-decor" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Pencil_icon.png" style="top:5px; left:5px;">
+    <img class="learning-decor" src="https://upload.wikimedia.org/wikipedia/commons/1/11/Book_icon.png" style="bottom:5px; right:5px;">
+  </div>
+  <div class="app-card" onclick="window.open('https://www.coursera.org/')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coursera-Logo.svg" alt="Coursera"><p>Coursera</p><span>Online Courses</span></div>
+  <div class="app-card" onclick="window.open('https://www.udemy.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Udemy_logo.svg" alt="Udemy"><p>Udemy</p><span>Skills</span></div>
+  <div class="app-card" onclick="window.open('https://www.duolingo.com/')"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Duolingo_logo.png" alt="Duolingo"><p>Duolingo</p><span>Languages</span></div>
+  <div class="app-card" onclick="window.open('https://www.edx.org/')"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/EdX-Logo.svg" alt="edX"><p>edX</p><span>Courses</span></div>
+</div>
+</section>
+
+<!-- Remaining sections (Gaming, Shopping, Tools, Finance, Travel, Health) can be added similarly -->
+
+<script>
+// Section scroll animation
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + window.innerHeight * 0.8;
+  sections.forEach(section => {
+    if (scrollY > section.offsetTop) { section.classList.add('visible'); }
+  });
+});
+</script>
+
+</body>
+</html>
